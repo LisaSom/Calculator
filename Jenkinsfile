@@ -5,7 +5,7 @@ pipeline {
         stage('Checkout') {
             steps {
                 // Checkout the code from the repository
-                git branch: 'main', url:'https://github.com/LisaSom/Calculator.git', credentialsId: 'gitcredentials'
+                git branch: 'master', url:'https://github.com/LisaSom/Calculator.git', credentialsId: 'gitcredentials'
             }
         }
 
