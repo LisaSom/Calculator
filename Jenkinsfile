@@ -5,13 +5,14 @@ pipeline {
         stage('Checkout') {
             steps {
                 // Checkout the code from the repository
-                git 'https://github.com/TamguyL/calculator.git'
+                git branch: 'main', url:'https://github.com/LisaSom/Calculator.git', credentialsId: 'gitcredentials'
             }
         }
 
         stage('Build') {
             steps {
                 // Build the Spring Boot application
+                sh 'chmod +x ./mvnw'
                 sh './mvnw clean install'
             }
         }
